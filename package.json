@@ -1,0 +1,6 @@
+{
+  "name": "sdetpro-k17-nodejs",
+  "dependencies": {
+    "readline-sync": "1.4.10"
+  }
+}
