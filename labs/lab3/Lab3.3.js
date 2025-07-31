@@ -10,22 +10,27 @@ if (userInputLengthOfArr <= 0) {
     console.log(`Sorted Array: ${value}`);
 
 } else {
-    let inputArr = [];
+    let intArr = [];
+    for (let index = 0; index < userInputLengthOfArr; index++) {
+        let message = `Input value ${index + 1}`;
+        intArr.push(getInputFromKeyboard(message));
+    }
     //let clonedArray = [...inputArr];
+console.log(intArr);
 
-    for (let index = 0; index < inputArr.length; index++) {
-        for (let comparedToIndex = index + 1; comparedToIndex < inputArr.length; comparedToIndex++) {
-            if (inputArr[index] > inputArr[comparedToIndex]) {
-                // let tempValue = inputArr.splice(index, 1, inputArr[comparedToIndex]);
-                // inputArr[comparedToIndex] = tempValue[0];
-                let tempValue = inputArr[index];
-                inputArr[index] = inputArr[comparedToIndex];
-                inputArr[comparedToIndex] = tempValue;
+    for (let index = 0; index < intArr.length; index++) {
+        for (let comparedToIndex = index + 1; comparedToIndex < intArr.length; comparedToIndex++) {
+            if (intArr[index] > intArr[comparedToIndex]) {
+                // let tempValue = intArr.splice(index, 1, intArr[comparedToIndex]);
+                // intArr[comparedToIndex] = tempValue[0];
+                let tempValue = intArr[index];
+                intArr[index] = intArr[comparedToIndex];
+                intArr[comparedToIndex] = tempValue;
             }
         }
     }
 
-    console.log(`Sorted Array: ${inputArr}`);
+    console.log(`Sorted Array: ${intArr}`);
 
 }
 
