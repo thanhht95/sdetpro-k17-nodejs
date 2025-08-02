@@ -1,0 +1,12 @@
+let array = [1, 2, 3, 4, 5];
+
+for (let index = 0; index < array.length; index++) {
+    const value = array[index];
+    if (isOddNumber(value)) {
+        oddNumberCount++;
+        oddNums.push(value);
+    } else {
+        evenNumberCount++;
+        evenNums.push(value);
+    }
+}

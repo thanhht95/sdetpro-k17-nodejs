@@ -15,28 +15,16 @@ if (userInputLengthOfArr <= 0) {
     }
 } else {
     let intArr = getUserUserInputValueToArray(userInputLengthOfArr);
-
-    console.log(`Even numbers: ${evenCount(intArr)}`);
-    console.log(`Odd numbers: ${oddCount(intArr)}`);
-}
-//let intArr = [1, 2, 3, 4, 5, 6, 7];
-
-function evenCount(array) {
-    let count = 0;
-    for (let value of array) {
+    let evenCount = 0;
+    let oddCount = 0;
+    for (let value of intArr) {
         if (value % 2 === 0) {
-            count++;
+            evenCount++;
+        } else {
+            oddCount++;
         }
     }
-    return count;
-}
 
-function oddCount(array) {
-    let count = 0;
-    for (let value of array) {
-        if (value % 2 !== 0) {
-            count++;
-        }
-    }
-    return count;
+    console.log(`Even numbers: ${evenCount}`);
+    console.log(`Odd numbers: ${oddCount}`);
 }
