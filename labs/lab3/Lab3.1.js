@@ -1,23 +1,21 @@
 const {
-    getInputFromKeyboard,
+    getUserInputNum,
+    getUserUserInputValueToArray
 } = require("../../lessons/utils/UtilMethods.js");
 
-let userInputLengthOfArr = Number(getInputFromKeyboard("Input the length of array"));
+let userInputLengthOfArr = Number(getUserInputNum("Input the length of array"));
 if (userInputLengthOfArr <= 0) {
     console.log("The number of length is invalid to run.");
 } else if (userInputLengthOfArr === 1) {
-    let value = Number(getInputFromKeyboard("Input value"));
+    let value = Number(getUserInputNum("Input value"));
     if (value % 2 === 0) {
         console.log("It's even number");
     } else {
         console.log("It's odd number");
     }
 } else {
-    let intArr = [];
-    for (let index = 0; index < userInputLengthOfArr; index++) {
-        let message = `Input value ${index + 1}`;
-        intArr.push(getInputFromKeyboard(message));
-    }
+    let intArr = getUserUserInputValueToArray(userInputLengthOfArr);
+
     console.log(`Even numbers: ${evenCount(intArr)}`);
     console.log(`Odd numbers: ${oddCount(intArr)}`);
 }

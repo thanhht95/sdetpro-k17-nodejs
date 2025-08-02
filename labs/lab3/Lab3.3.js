@@ -1,22 +1,18 @@
 const {
-    getInputFromKeyboard,
+    getUserInputNum,
+    getUserUserInputValueToArray
 } = require("../../lessons/utils/UtilMethods.js");
 
-let userInputLengthOfArr = Number(getInputFromKeyboard("Input the length of array"));
+let userInputLengthOfArr = Number(getUserInputNum("Input the length of array"));
 if (userInputLengthOfArr <= 0) {
     console.log("The number of length is invalid to run.");
 } else if (userInputLengthOfArr === 1) {
-    let value = Number(getInputFromKeyboard("Input value"));
+    let value = Number(getUserInputNum("Input value"));
     console.log(`Sorted Array: ${value}`);
 
 } else {
-    let intArr = [];
-    for (let index = 0; index < userInputLengthOfArr; index++) {
-        let message = `Input value ${index + 1}`;
-        intArr.push(getInputFromKeyboard(message));
-    }
+    let intArr = getUserUserInputValueToArray(userInputLengthOfArr)
     //let clonedArray = [...inputArr];
-console.log(intArr);
 
     for (let index = 0; index < intArr.length; index++) {
         for (let comparedToIndex = index + 1; comparedToIndex < intArr.length; comparedToIndex++) {
