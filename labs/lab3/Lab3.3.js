@@ -15,7 +15,7 @@ if (userInputLengthOfArr <= 0) {
     //let clonedArray = [...inputArr];
 
     for (let index = 0; index < intArr.length; index++) {
-        for (let comparedToIndex = index + 1; comparedToIndex < (intArr.length - index); comparedToIndex++) {
+        for (let comparedToIndex = index + 1; comparedToIndex < intArr.length; comparedToIndex++) {
             if (intArr[index] > intArr[comparedToIndex]) {
                 // let tempValue = intArr.splice(index, 1, intArr[comparedToIndex]);
                 // intArr[comparedToIndex] = tempValue[0];
@@ -26,10 +26,6 @@ if (userInputLengthOfArr <= 0) {
         }
     }
 
-    // length = 5; index=4, comparedtoIndex = 5, 5 < 5
-
     console.log(`Sorted Array: ${intArr}`);
-
 }
-
 
