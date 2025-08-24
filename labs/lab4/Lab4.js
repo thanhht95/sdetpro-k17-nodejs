@@ -11,14 +11,13 @@ const userAccountB = JSON.parse(JSON.stringify(userAccountA));
 userAccountB.name = "User B";
 userAccountB.accountNumber = "456"
 userAccountB.balance = 50.00;
-
 let bankAccounts = [userAccountA, userAccountB];
 
 let isStillUsing = true;
 while (isStillUsing) {
     printAccountOption();
     const userOption = getUserOption();
-
+    
     if (userOption === 0) {
         isStillUsing = false;
     } else if (userOption === 1) {
@@ -34,7 +33,7 @@ while (isStillUsing) {
         let userInputAccNum = getUserInputNum("Input the account number to withdraw");
         let { isExist, balance, pointingUser } = checkAccountIfExit(userInputAccNum, bankAccounts)
         if (isExist) {
-            let userWithdrawNumber = getUserInputNum("How much do you need");
+            let userWithdrawNumber = getUserInputNum("How much do you need?");
             if (isSufficientBalance(balance, userWithdrawNumber)) {
                 balanceUpdate(pointingUser, userWithdrawNumber);
                 console.log(`Withdraw ${userWithdrawNumber} Successfully! Current balance updated: ${pointingUser.balance}`);
@@ -44,6 +43,8 @@ while (isStillUsing) {
         } else {
             console.log(`Cannot find the input info. Please try again!`);
         }
+    } else {
+        console.log(`Please select a number in the menu only.`);
     }
 }
 
@@ -55,7 +56,7 @@ function printAccountOption() {
 }
 
 function getUserOption() {
-    return getUserInputNum("Input the number of option above");
+    return getUserInputNum("Input the number of the option above to select");
 }
 
 function checkAccountIfExit(userInputAccNum, userAccountList) {
@@ -73,15 +74,11 @@ function checkAccountIfExit(userInputAccNum, userAccountList) {
             }
         }
     }
-    return isExist;
+    return {isExist};
 }
 
 function isSufficientBalance(balance, userWithdrawNumber) {
-    if (balance > userWithdrawNumber) {
-        return true;
-    } else {
-        false
-    }
+    return balance > userWithdrawNumber;
 }
 
 function balanceUpdate(user, userWithdrawNumber) {
