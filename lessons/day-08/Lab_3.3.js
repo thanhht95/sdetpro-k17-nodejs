@@ -22,6 +22,23 @@ for (; unsortedPosition > 0; unsortedPosition--) {
     }
 }
 
+
+while (unsortedPosition > 0) {
+    for (let innerIndex = 0; innerIndex < unsortedPosition; innerIndex++) {
+        let currentValue = array[innerIndex];
+        let rightPositionValue = array[innerIndex + 1];
+        if (currentValue > rightPositionValue) {
+            //Swap
+            //swap(array, innerIndex);
+            let temp = currentValue;
+            array[innerIndex] = array[innerIndex + 1];
+            array[innerIndex + 1] = temp;
+        }
+    }
+    unsortedPosition--;
+}
+
+
 // Time Complexity: O(n^2)
 
 console.log(array);
